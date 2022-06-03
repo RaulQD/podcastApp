@@ -1,0 +1,29 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as *;
+
+.earn{
+    background-color: $mainColor;
+
+    .earn-grid{
+        @include m.tablet { 
+            @include m.grid(5,4rem);
+            align-items:center;
+         }
+        }
+        .earn-info{
+            grid-column: 1/4;
+            h2{
+                @include m.title($secondColor,$whiteColor);
+            }
+        }
+        .earn-image{
+            grid-column: 4/6;
+        }
+    .earn-image{
+        transition-duration: .3s;
+        transition-property: transform;
+        &:hover{
+            transform: rotate(6deg) scale(1.1);
+        }
+    }
+}

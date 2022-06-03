@@ -1,0 +1,51 @@
+@use 'base/variables' as *;
+
+
+@mixin telefono {
+    @media screen and( min-width: $telefono) {
+        @content;
+    }
+}
+@mixin tabletMax {
+    @media screen and( max-width: $tabletMax){
+        @content;
+    }
+}
+@mixin tablet {
+    @media screen and( min-width:$tablet) {
+        @content;
+    }
+}
+@mixin desktop {
+    @media screen and(min-width: $desktop) {
+        @content;
+    }
+}
+@mixin grid($columnas,$separation) {
+    display: grid;
+    grid-template-columns: repeat($columnas,1fr);
+    gap:$separation;
+}
+@mixin bgImage($url,$colorDegrade){
+    background-image: linear-gradient($colorDegrade 0%, $colorDegrade 100%), url( $url);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+}
+@mixin title($colorTexto,$colorLinea){
+    display: inline-block;
+    font-size: 3.6rem;
+    margin-top: 5rem;
+    color:$colorTexto;
+    @include tablet { 
+        margin-top:0;
+     }
+    &::after{
+        content:'';
+        display: block;
+        width: calc(100% + 1rem);
+        height: 1rem;
+        background-color:$colorLinea;
+        margin: -1.4rem 0 0 0;
+    }
+}

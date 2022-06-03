@@ -1,0 +1,8 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as *;
+
+.stadistic{
+    h2{
+        @include m.title($secondColor, $mainColor);
+    }
+}
