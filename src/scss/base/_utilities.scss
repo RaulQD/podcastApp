@@ -7,25 +7,3 @@
 .bg-first{
     background-color: $mainColor;
 }
-.btn{
-    background-color: $mainColor;
-    padding:1.2rem 3rem;
-    width:100%;
-    display: block;
-    border-radius: 10px;
-    border: none;
-    color:$secondColor;
-    font-weight: 700;
-    font-size: 1.8rem;
-    text-align: center;
-    transition-duration: .3s;
-    transition-property: background-color;
-    transition-timing-function: ease-in-out;
-    &:hover{
-        background-color: darken($mainColor, 10);
-    }
-    @include m.tablet { 
-        width:auto;
-        display: inline-block;
-     }
-}

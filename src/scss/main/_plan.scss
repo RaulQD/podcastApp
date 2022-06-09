@@ -1,12 +1,73 @@
 @use 'base/variables' as *;
 @use 'base/mixins' as m;
 
-.plan{
+.planes{
     background-color: $secondColor;
     h2{
         @include m.title($whiteColor,$mainColor);
     }
-    p{
+    .description{
         color:$whiteColor;
+        font-size: 1.8rem;
+        @include m.tablet { 
+            font-size:2rem;
+         }
     }
+}
+.our-plans{
+    display: flex;
+    flex-direction: column;
+    @include m.tablet { 
+        flex-direction:row;
+        max-width: 80rem;
+        margin-inline: auto;
+        margin-block-start: 10rem ;
+     }
+     .plan{
+         flex-grow: 1;
+         background-color: $whiteColor;
+         padding: 16rem 4rem 4rem 4rem;
+         border-bottom: 1px solid #e1e1e1;
+         @include m.tablet { 
+             border:none;
+             transition-property:transform;
+             transition-duration: .3s;
+             &:hover{
+                 transform: scale(1.1);
+             }
+          }
+        &.basico{
+            @include m.iconoBg('../img/icono_inicio.svg');
+         }
+        &.negocio{
+            order: -1;
+            background-color: $mainColor;
+            @include m.iconoBg('../img/icono_negocio.svg');
+            @include m.tablet { 
+                order:unset;
+                margin: -5rem 0;
+                border-radius: 2rem;
+                background-position: 50% 7rem;
+                padding-top:calc(16rem + 5rem);
+                z-index:1;
+             }
+        }
+        &.pro{
+            @include m.iconoBg('../img/icono_pro.svg');
+            
+        }
+        .precio{
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            text-align: center;
+            font-weight: 700;
+        }
+        .listado{
+            text-align: center;
+            li{
+                margin-bottom: 2rem;
+            }
+        }
+        
+     }
 }

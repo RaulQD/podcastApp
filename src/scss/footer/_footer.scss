@@ -1,0 +1,53 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as *;
+
+.footer{
+    background-color: $secondColor;
+    .footer-grid{
+        padding: 5rem 0;
+        @include m.tablet { 
+            @include m.grid(4,4rem);
+        }
+    }
+    .footer-logo{
+        max-width: 20rem;
+        margin: 0 auto 5rem;
+        @include m.tablet { 
+            margin:0;
+         }
+    }
+    .footer-content{
+        margin-bottom: 2rem;
+        @include m.tablet { 
+            margin-bottom:0;
+         }
+        h3{
+            text-transform: uppercase;
+            color:$mainColor;
+            text-align: left;
+        }
+        .listado{
+            margin: 0;
+            li{
+                color: $whiteColor;
+                margin-bottom: 1.5rem;
+                @include m.tablet { 
+                    &:last-of-type{
+                        margin-bottom:0;
+                    }
+                 }
+            }
+        }
+    }
+    .border-line{
+        border-bottom: 2px solid $mainColor;
+    }
+    p{
+        color: $whiteColor;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 1.2rem;
+        margin:0;
+        padding:1rem 0;
+    }
+}

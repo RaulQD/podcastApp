@@ -1,0 +1,12 @@
+@use 'base/variables' as *;
+@use 'base/mixins' as m;
+
+.button-first{
+    @include m.btn($secondColor,$mainColor);
+}
+.button-plan{
+    @extend .button-first;
+    border: 1px solid $whiteColor;
+    margin-top: 4rem;
+    display: block;
+}

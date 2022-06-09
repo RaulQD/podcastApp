@@ -1,0 +1,73 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as *;
+
+.test{
+
+    .test-grid{
+        @include m.tablet { 
+            @include m.grid(5,4rem);
+            align-items: center;
+            .test-img{
+                grid-column: 1/3;
+                // height: 90%;
+            }
+            .test-description{
+                grid-column:3/6;
+            }
+         }
+    }
+    .test-description{
+        h2{
+            @include m.title($secondColor, $mainColor);
+        }
+
+        .testimoniales{
+            background-color: $mainColor;
+            border: 4px solid $secondColor;
+            border-radius: 1rem;
+            padding:2rem;
+            margin-bottom: 4rem;
+            position: relative;
+            @include m.tablet { 
+                max-width:70%;
+                &:nth-child(2){
+                 margin-left: 10%;
+                }
+                &:nth-child(3){
+                    margin-left: 20%;
+                }
+                &:nth-child(4){
+                    margin-left: 30%;
+                }
+             }
+             
+            &::before{
+                content: '';
+                background-image: url(../img/comilla.svg);
+                background-repeat: no-repeat;
+                background-position: center;
+                display: block;
+                height: 4rem;
+                width: 4rem;
+                position: absolute;
+                @include m.tablet { 
+                    height: 5rem;
+                    width: 5rem;
+                 }
+            }
+            &:last-of-type{
+                margin-bottom: 0;
+            }
+            p{
+                margin: 0;
+                padding-left: 6rem;
+                font-size: 1.6rem;
+                @include m.tablet { 
+                    font-size:2rem;
+                 }
+            }
+            
+        }
+        
+    }
+}

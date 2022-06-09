@@ -15,6 +15,12 @@
             h2{
                 @include m.title($secondColor,$whiteColor);
             }
+            p{
+                font-size: 1.8rem;
+                @include m.tablet { 
+                    font-size:2rem;
+                 }
+            }
         }
         .earn-image{
             grid-column: 4/6;

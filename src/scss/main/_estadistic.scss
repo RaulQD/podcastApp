@@ -5,4 +5,11 @@
     h2{
         @include m.title($secondColor, $mainColor);
     }
+    p{
+        font-size: 1.8rem;
+        @include m.tablet { 
+            font-size:2rem;
+         }
+    }
+
 }
